@@ -282,7 +282,7 @@ snippet sum \sum^{}_{}
 snippet lim \lim_{}
 	\\lim_{${1:n \\to \\infty}} ${0}
 snippet frame frame environment
-	\\begin{frame}[${1:t}]{${2:title}}
+	\\begin{frame}{${1:title}}
 		${0:${VISUAL}}
 	\\end{frame}
 snippet block block environment
@@ -338,3 +338,14 @@ snippet urlc
 	\\url{`@+`} ${0}
 snippet hrefc
 	\\href{`@+`}{${1}} ${0}
+
+# Algorithm
+snippet alg
+	\\begin{algorithm}
+		\\SetAlgoLined
+		\\KwData{${1}}
+		\\KwResult{${2}}
+		\\initialization\;
+		${0}
+		\\caption{${3}}
+	\\end{algorithm}
