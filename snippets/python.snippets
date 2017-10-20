@@ -202,6 +202,20 @@ snippet tgwt
 	# then: ${3}
 snippet fut
 	from __future__ import ${0}
+
+#getarg
+snippet getarg
+	import argparse
+	parser = argparse.ArgumentParser(description="${1:Lorem Ipsum}")
+
+	${0}
+	
+	args = parser.parse_args()
+
+snippet addarg
+	parser.add_argument('${1}', action='${2:store}', type=${3:int}, 
+			default=${4:None}, help='${5:Lorem Ipsum} (Default = %(default)s)')
+
 #getopt
 snippet getopt
 	try:
@@ -269,3 +283,4 @@ snippet dcp dict comprehension
 
 snippet scp set comprehension
 	{${1} for ${2} in ${3:${VISUAL}}}${0}
+
