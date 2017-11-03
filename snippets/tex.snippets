@@ -226,6 +226,8 @@ snippet mc mathcal
 	\\mathcal{${1:${VISUAL:text}}} ${0}
 snippet ms mathscr
 	\\mathscr{${1:${VISUAL:text}}} ${0}
+snippet mb mathbb
+	\\mathbb{${1:${VISUAL:text}}} ${0}
 #misc
 snippet ft \footnote
 	\\footnote{${1:${VISUAL:text}}} ${0}
@@ -250,13 +252,17 @@ snippet tikz figure environment (tikzpicture)
 	\\end{figure}
 	${0}
 snippet subfig subfigure environment
-	\\begin{subfigure}[${1}]{${2:\\textwidth}}
-	\\begin{center}
-		${3}
-	\\end{center}
-	\\caption{${4}}
-	\\label{fig:${5}}
-	\\end{subfigure}
+	\\begin{figure}
+	\\centering
+		\\begin{subfigure}[${1}]{${2:\\textwidth}}
+		\\centering
+			\\includegraphics[scale=${3}]{Figures/${4}}
+		\\caption{${5}}
+		\\label{fig:${6}}
+		\\end{subfigure}
+	\\caption{${7}}
+	\\label{fig:${8}}
+	\\end{figure}
 	${0}
 snippet tikzcd tikzcd environment in equation
 	\\begin{equation}
@@ -279,6 +285,8 @@ snippet frac \frac{}{}
 	\\frac{${1:num}}{${2:denom}} ${0}
 snippet sum \sum^{}_{}
 	\\sum^{${1:n}}_{${2:i=1}} ${0}
+snippet prod \prod^{}_{}
+	\\prod^{${1:n}}_{${2:i=1}} ${0}
 snippet lim \lim_{}
 	\\lim_{${1:n \\to \\infty}} ${0}
 snippet frame frame environment

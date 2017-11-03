@@ -213,42 +213,28 @@ snippet getarg
 	args = parser.parse_args()
 
 snippet addarg
-	parser.add_argument('${1}', action='${2:store}', type=${3:int}, 
-			default=${4:None}, help='${5:Lorem Ipsum} (Default = %(default)s)')
+	parser.add_argument(
+		'${1}', action='${2:store}', type=${3:int}, default=${4:None}, 
+		help='${5:Lorem Ipsum} (Default = %(default)s)')
 
-#getopt
-snippet getopt
-	try:
-		# Short option syntax: "hv:"
-		# Long option syntax: "help" or "verbose="
-		opts, args = getopt.getopt(sys.argv[1:], "${1:short_options}", [${2:long_options}])
-
-	except getopt.GetoptError, err:
-		# Print debug info
-		print str(err)
-		${3:error_action}
-
-	for option, argument in opts:
-		if option in ("-h", "--help"):
-			${0}
-		elif option in ("-v", "--verbose"):
-			verbose = argument
-# logging
 # glog = get log
 snippet glog
-	import logging
-	logger = logging.getLogger(${0:__name__})
+	import logging as log
+	log.basicConfig(
+			filename='${0}.log', filemode='w',
+			format='%(asctime)s - %(levelname)s \t %(message)s',
+			level=${1:log.DEBUG})
 snippet le
-	logger.error(${0:msg})
+	log.error(${0:msg})
 # conflict with lambda=ld, therefor we change into Logger.debuG
 snippet lg
-	logger.debug(${0:msg})
+	log.debug(${0:msg})
 snippet lw
-	logger.warning(${0:msg})
+	log.warning(${0:msg})
 snippet lc
-	logger.critical(${0:msg})
+	log.critical(${0:msg})
 snippet li
-	logger.info(${0:msg})
+	log.info(${0:msg})
 snippet epydoc
 	"""${1:Description}
 
