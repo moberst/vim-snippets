@@ -242,9 +242,15 @@ snippet fig figure environment (includegraphics)
 	\\end{figure}
 	${0}
 snippet tikz figure environment (tikzpicture)
-	\\begin{figure}[htpb]
+	\\begin{figure}[h]
 	\\begin{center}
-	\\begin{tikzpicture}[scale=${1:1}, transform shape]
+	\\begin{tikzpicture}[
+    ynode/.style={circle, draw=gray!90, fill=gray!30, very thick, minimum size=10mm},
+    xnode/.style={circle, draw=gray!60, fill=gray!10, very thick, minimum size=10mm},
+		]
+		\\node[ynode] (Y)  {\$Y\$};
+		\\node[xnode] (X) [left=of Y] {\$X\$} ;
+		\\draw[-latex, thick] (X) -- (Y);
 		${2}
 	\\end{tikzpicture}
 	\\end{center}
