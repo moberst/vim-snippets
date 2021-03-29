@@ -244,13 +244,16 @@ snippet fig figure environment (includegraphics)
 snippet tikz figure environment (tikzpicture)
 	\\begin{figure}[t]
 	\\begin{center}
-	\\begin{tikzpicture}[obs/.style={circle, draw=gray!90, fill=gray!30, very thick, minimum size=5mm}, uobs/.style={circle, draw=gray!90, fill=gray!10, dotted, minimum size=5mm}, bend angle=30]
+	\\begin{tikzpicture}[
+		obs/.style={circle, draw=gray!90, fill=gray!30, very thick, minimum size=5mm}, 
+		uobs/.style={circle, draw=gray!90, fill=gray!10, dotted, minimum size=5mm}, 
+		bend angle=30]
 		\\node[uobs] (U) {\$U\$} ;
 		\\node[obs] (Y) [below left=of U]  {\$Y\$};
 		\\node[obs] (X) [below right=of U] {\$X\$} ;
-    \\draw[-latex, thick] (X) -- (Y) node[midway, below] {\$\alpha\$};
-    \\draw[-latex, thick] (U) -- (X);
-    \\draw[-latex, thick] (U) -- (Y);
+		\\draw[-latex, thick] (X) -- (Y) node[midway, below] {\$\alpha\$};
+		\\draw[-latex, thick] (U) -- (X);
+		\\draw[-latex, thick] (U) -- (Y);
 		${2}
 	\\end{tikzpicture}
 	\\end{center}
