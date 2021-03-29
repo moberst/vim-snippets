@@ -124,48 +124,39 @@ snippet part document \part
 	% part $2 (end)
 # Chapter
 snippet cha \chapter
-	\\chapter{${1:chapter name}}
-	\\label{cha:${2:$1}}
+	\\chapter{${1:chapter name}}\\label{cha:${2:$1}}
 	${0}
 # Section
 snippet sec \section
-	\\section{${1:section name}}\%
-	\\label{sec:${2:$1}}
+	\\section{${1:section name}}\\label{sec:${2:$1}}
 	${0}
 # Section without number
 snippet sec* \section*
-	\\section*{${1:section name}}%
-	\\label{sec:${2:$1}}
+	\\section*{${1:section name}}\\label{sec:${2:$1}}
 	${0}
 # Sub Section
 snippet sub \subsection
-	\\subsection{${1:subsection name}}%
-	\\label{sec:${2:$1}}
+	\\subsection{${1:subsection name}}\\label{sec:${2:$1}}
 	${0}
 # Sub Section without number
 snippet sub* \subsection*
-	\\subsection*{${1:subsection name}}%
-	\\label{sec:${2:$1}}
+	\\subsection*{${1:subsection name}}\\label{sec:${2:$1}}
 	${0}
 # Sub Sub Section
 snippet ssub \subsubsection
-	\\subsubsection{${1:subsubsection name}}%
-	\\label{sec:${2:$1}}
+	\\subsubsection{${1:subsubsection name}}\\label{sec:${2:$1}}
 	${0}
 # Sub Sub Section without number
 snippet ssub* \subsubsection*
-	\\subsubsection*{${1:subsubsection name}}%
-	\\label{sec:${2:$1}}
+	\\subsubsection*{${1:subsubsection name}}\\label{sec:${2:$1}}
 	${0}
 # Paragraph
 snippet par \paragraph
-	\\paragraph{${1:paragraph name}}
-	\\label{par:${2:$1}}
+	\\paragraph{${1:paragraph name}}\\label{par:${2:$1}}
 	${0}
 # Sub Paragraph
 snippet subp \subparagraph
-	\\subparagraph{${1:subparagraph name}}
-	\\label{subp:${2:$1}}
+	\\subparagraph{${1:subparagraph name}}\\label{subp:${2:$1}}
 	${0}
 snippet ni \noindent
 	\\noindent
@@ -181,6 +172,8 @@ snippet listing reference to a listing
 	${1:Listing}~\\ref{${2:list}}
 snippet section reference to a section
 	${1:Section}~\\ref{sec:${2}} ${0}
+snippet equation reference to an equation 
+	${1:Equation}~\\eqref{eq:${2}} ${0}
 snippet page reference to a page
 	${1:page}~\\pageref{${2}} ${0}
 snippet index \index
