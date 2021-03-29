@@ -233,21 +233,27 @@ snippet mb mathbb
 snippet ft \footnote
 	\\footnote{${1:${VISUAL:text}}} ${0}
 snippet fig figure environment (includegraphics)
-	\\begin{figure}
+	\\begin{figure}[t]
 	\\begin{center}
-		\\includegraphics[scale=${1}]{Figures/${2}}
+		\\includegraphics[width=${1}]{figs/${2}}
 	\\end{center}
 	\\caption{${3}}
 	\\label{fig:${4}}
 	\\end{figure}
 	${0}
 snippet tikz figure environment (tikzpicture)
-	\\begin{figure}[h]
+	\\begin{figure}[t]
 	\\begin{center}
-	\\begin{tikzpicture}[node/.style={circle, draw=gray!90, fill=gray!30, very thick, minimum size=10mm},]
-		\\node[node] (Y)  {\$Y\$};
-		\\node[node] (X) [left=of Y] {\$X\$} ;
-		\\draw[-latex, thick] (X) -- (Y);
+	\\begin{tikzpicture}[
+      obs/.style={circle, draw=gray!90, fill=gray!30, very thick, minimum size=5mm},
+      uobs/.style={circle, draw=gray!90, fill=gray!10, dotted, minimum size=5mm},
+      bend angle=30]
+		\\node[uobs] (U) {\$U\$} ;
+		\\node[obs] (Y) [below left=of U]  {\$Y\$};
+		\\node[obs] (X) [below right=of U] {\$X\$} ;
+    \\draw[-latex, thick] (X) -- (Y) node[midway, below] {\$\alpha\$};
+    \\draw[-latex, thick] (U) -- (X);
+    \\draw[-latex, thick] (U) -- (Y);
 		${2}
 	\\end{tikzpicture}
 	\\end{center}
@@ -256,11 +262,11 @@ snippet tikz figure environment (tikzpicture)
 	\\end{figure}
 	${0}
 snippet subfig subfigure environment
-	\\begin{figure}
+	\\begin{figure}[t]
 	\\centering
 		\\begin{subfigure}[${1}]{${2:\\textwidth}}
 		\\centering
-			\\includegraphics[scale=${3}]{Figures/${4}}
+			\\includegraphics[width=${3}]{figs/${4}}
 		\\caption{${5}}
 		\\label{fig:${6}}
 		\\end{subfigure}
