@@ -25,11 +25,11 @@ snippet tab tabular (or arbitrary) environment
 		${0:${VISUAL}}
 	\\end{$1}
 snippet thm thm (or arbitrary) environment with optional argument
-	\\begin[${1:name}]{thm${2:thm}}}\\label{thm${2:thm}:${3:label}}
+	\\begin[${1:name}]{thm${2:thm}}\\label{thm$2:${3:label}}
 		${0:${VISUAL}}
 	\\end{$2}
-snippet thmres thmthm (or arbitrary) RESTATABLE environment with optional argument
-	\\begin{restatable}[${1:name}]{thm${2:thm}}{${3:label}}\\label{thm${2:thm}:${3:label}}
+snippet res thmthm (or arbitrary) RESTATABLE environment with optional argument
+	\\begin{restatable}[${1:name}]{thm${2:thm}}{${3:label}}\\label{thm$2:${3:label}}
 		${0:${VISUAL}}
 	\\end{restatable}
 snippet center center environment
