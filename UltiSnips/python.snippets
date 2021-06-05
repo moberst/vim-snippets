@@ -74,7 +74,16 @@ endsnippet
 ###########################################################################
 # Aside from these, "def" will use a docstring by default
 
-snippet mdoc "Module Docstring"
+snippet "moddoc single" "Module Docstring with single quotes"
+'''${1:A one line summary of the module or program, terminated by a period}.
+
+${2:Leave one blank line.  The rest of this docstring should contain an overall
+description of the module or program.  Optionally, it may also contain a brief
+description of exported classes and functions and/or usage examples.}
+'''
+endsnippet
+
+snippet "moddoc double" "Module Docstring with double quotes"
 """${1:A one line summary of the module or program, terminated by a period}.
 
 ${2:Leave one blank line.  The rest of this docstring should contain an overall
@@ -88,8 +97,9 @@ endsnippet
 ###########################################################################
 # Miscelleneous functions
 
-snippet prin "Print with f-string"
+snippet printf "Print with f-string"
 print(f'$0')
+${VISUAL}
 endsnippet
 
 ###########################################################################
