@@ -144,6 +144,8 @@ class Arg(object):
 	def __init__(self, arg):
 		self.arg = arg
 		self.name = arg.split('=')[0].strip()
+		if ':' in arg:
+			self.name = self.name.split(':')[0].strip()
 
 	def __str__(self):
 		return self.name
@@ -153,6 +155,9 @@ class Arg(object):
 
 	def is_kwarg(self):
 		return '=' in self.arg
+
+	def has_type(self):
+		return ':' in self.arg
 
 
 def get_args(arglist):
