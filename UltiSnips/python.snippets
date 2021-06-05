@@ -1,6 +1,98 @@
 priority -50
 
 ###########################################################################
+#                            Common Imports																#
+###########################################################################
+
+snippet "import numpy" "Import numpy"
+import numpy as np  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import pandas" "Import pandas"
+import pandas as pd  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import matplot" "Import matplotlib"
+import matplotlib.pyplot as plt  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import seaborn" "Import seaborn"
+import seaborn as sns  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import sklearn" "Import all relevant sklearn modules"
+from sklearn import linear_model as lm  # type: ignore
+from sklearn import preprocessing as pp  # type: ignore
+from sklearn import model_selection as ms  # type: ignore
+from sklearn import pipeline  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import sklearn.linear_model" "Import linear model"
+from sklearn import linear_model as lm  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import sklearn.preprocessing" "Import preprocessing"
+from sklearn import preprocessing as pp  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import sklearn.model_selection" "Import model_selection"
+from sklearn import model_selection as ms  # type: ignore
+${VISUAL}
+endsnippet
+
+snippet "import sklearn.pipeline" "Import pipeline"
+from sklearn import pipeline  # type: ignore
+${VISUAL}
+endsnippet
+
+###########################################################################
+#                            PLOTTING																			#
+###########################################################################
+
+# Make Figures
+snippet fig "Subplots with matplotlib"
+fig, ax = plt.subplots(
+		nrows=${1:1}, ncols=${2:1}, figsize=(${3:width, height}),
+		sharex=${4:True}, sharey=${5:True})
+${VISUAL}
+endsnippet
+
+snippet plotsize "Change figure font size"
+plt.rcParams.update({'font.size': ${1:18}})
+${VISUAL}
+endsnippet
+
+###########################################################################
+#                            DOCUMENTATION																#
+###########################################################################
+# Aside from these, "def" will use a docstring by default
+
+snippet mdoc "Module Docstring"
+"""${1:A one line summary of the module or program, terminated by a period}.
+
+${2:Leave one blank line.  The rest of this docstring should contain an overall
+description of the module or program.  Optionally, it may also contain a brief
+description of exported classes and functions and/or usage examples.}
+"""
+endsnippet
+
+###########################################################################
+#                            MISC																					#
+###########################################################################
+# Miscelleneous functions
+
+snippet prin "Print with f-string"
+print(f'$0')
+endsnippet
+
+###########################################################################
 #                            TEXTMATE SNIPPETS                            #
 ###########################################################################
 
