@@ -237,7 +237,7 @@ snippet ft \footnote
 snippet fig figure environment (includegraphics)
 	\\begin{figure}[t]
 	\\begin{center}
-		\\includegraphics[width=${1}]{figs/${2}}
+		\\includegraphics[width=${1:0.5\\linewidth}]{figs/${2}}
 	\\end{center}
 	\\caption{${3}}%
 	\\label{fig:${4}}
@@ -268,7 +268,7 @@ snippet subfig subfigure environment
 	\\centering
 		\\begin{subfigure}[${1}]{${2:\\textwidth}}
 		\\centering
-			\\includegraphics[width=${3}]{figs/${4}}
+			\\includegraphics[width=${3:0.9\\linewidth}]{figs/${4}}
 		\\caption{${5}}%
 		\\label{fig:${6}}
 		\\end{subfigure}
