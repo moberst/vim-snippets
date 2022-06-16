@@ -40,6 +40,15 @@ snippet fig "Figure environment" b
 \end{figure}
 endsnippet
 
+snippet wrapfig "Wrap Figure environment" b
+\begin{wrapfigure}{${2:rl}}{${3:0.5}\textwidth}
+	\centering
+	\includegraphics[width=${4:0.8}\textwidth]{${5:name.ext}}
+	\caption{${5/(\w+)\.\w+/\u$1/}$0}%
+	\label{fig:${5/(\w+)\.\w+/$1/}}
+\end{wrapfigure}
+endsnippet
+
 snippet enum "Enumerate" b
 \begin{enumerate}
 	\item ${0:${VISUAL}}
