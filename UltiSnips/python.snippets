@@ -377,12 +377,12 @@ endglobal
 ########################################
 
 snippet class "class with docstrings" b
-class ${1:MyClass}(${2:object}):
+class ${1:MyClass}:
 
-	`!p snip.rv = triple_quotes(snip)`${3:Docstring for $1. }`!p snip.rv = triple_quotes(snip)`
+	`!p snip.rv = triple_quotes(snip)`${2:Docstring for $1. }`!p snip.rv = triple_quotes(snip)`
 
-	def __init__(self$4):
-		`!p snip.rv = triple_quotes(snip)`${5:TODO: to be defined1.}`!p
+	def __init__(self$3):
+		`!p snip.rv = triple_quotes(snip)`${4:TODO: to be defined1.}`!p
 snip.rv = ""
 snip >> 2
 
@@ -400,17 +400,17 @@ endsnippet
 
 
 snippet slotclass "class with slots and docstrings" b
-class ${1:MyClass}(${2:object}):
+class ${1:MyClass}:
 
-	`!p snip.rv = triple_quotes(snip)`${3:Docstring for $1. }`!p snip.rv = triple_quotes(snip)`
+	`!p snip.rv = triple_quotes(snip)`${2:Docstring for $1. }`!p snip.rv = triple_quotes(snip)`
 `!p
 snip >> 1
 args = get_args(t[4])
 write_slots_args(args, snip)
 `
 
-	def __init__(self$4):
-		`!p snip.rv = triple_quotes(snip)`${5:TODO: to be defined.}`!p
+	def __init__(self$3):
+		`!p snip.rv = triple_quotes(snip)`${4:TODO: to be defined.}`!p
 snip.rv = ""
 snip >> 2
 
