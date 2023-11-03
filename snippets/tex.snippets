@@ -263,6 +263,31 @@ snippet tikz figure environment (tikzpicture)
 	\\label{fig:${4}}
 	\\end{figure}
 	${0}
+snippet swig single world intervention graph
+	\\begin{tikzpicture}[
+		obs/.style={circle, draw=gray!90, fill=gray!30, very thick, minimum size=5mm}, 
+		uobs/.style={circle, draw=gray!90, fill=gray!10, dotted, minimum size=5mm}, 
+		bend angle=30]
+		\\tikzset{line width=1.5pt, outer sep=0pt,
+		ell/.style={draw,fill=white, inner sep=2pt,
+		line width=1.5pt},
+		swig vsplit={gap=5pt,
+		inner line width right=0.5pt}};
+		\\node[obs] (D) {\$D\$} ;
+		\\node[obs] (X) [below=of D]  {\$X\$};
+		\\node[name=A,right=of D,shape=swig vsplit,fill=gray!30,draw=gray!90,minimum size=5mm]{
+			\\nodepart{left}{\$A\$}
+			\\nodepart{right}{\$a\$}
+		};
+		\\node[obs] (Y) [right=of X] {\$Y_a\$} ;
+		\\draw[->, thick,>=stealth]
+			(D) edge (A)
+			(X) edge (A)
+			(X) edge (Y)
+			(A) edge[out=-30,in=30] (Y)
+	\\end{tikzpicture}
+${0}
+
 snippet subfig subfigure environment
 	\\begin{figure}[t]
 	\\centering
