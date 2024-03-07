@@ -1,26 +1,113 @@
+snippet ins "Insight" b
+= Insight =
+:insight-inbox:
+$1
+endsnippet
+
 snippet ref "Reflection" b
 = Process Reflection =
+:daily-reflection:
 
-What worked well today?
-* ${1} 
+Narrative account of the day: ${1}
 
-How do I feel about it?
+Are you grateful for anything today?
 * ${2} 
 
-What could I have done differently, and how would I feel?
+What worked well today, as a process?
 * ${3} 
+
+Is there anything I have done differently (in the *process*, not outcome), and how would I feel?
+* ${4} 
 
 endsnippet
 
-snippet plan "Plan" b
+snippet pland "Daily Plan" b
 = Plan for `env LC_ALL=en_US.utf8 date --date="today" "+%Y.%m.%d %A"` =
+:planning:daily-plan:
 
-There are about ${1} hour(s) left in the day...
+See the [[${1}#WeeklyPlan]]
 
-What is a concrete, achievable set of tasks we can do in that time?
+${2}
+
+endsnippet
+
+snippet planw "Weekly Plan" b
+= WeeklyPlan =
+:planning:weekly-plan:
+
+What is *urgent*?
+* ${1}
+
+What is *important*? 
 * ${2} 
 
-What is left for the next day or two?
+What can be achieved this week?
 * ${3}
+
+endsnippet
+
+snippet meeting "Meeting Notes" b
+= Meeting: ${1} =
+*Participants* [ :c-${2:david}: ]
+*Topic* [ :p-${3:thesis}: ]
+:meeting:
+
+== Agenda ==
+
+${VISUAL}
+
+== Raw Notes ==
+
+== Summary ==
+
+endsnippet
+
+snippet link_pdf_meeting "Link to Meeting PDF" b
+[[file:/home/moberst/Dropbox/research/meeting-notes/${1}.pdf|Meeting PDF]]
+endsnippet
+
+snippet link_whiteboard "Link to Screenshot of Board" b
+[[file:/home/moberst/Dropbox/research/wiki/Whiteboard/${1}|Photo of the Board]]
+endsnippet
+
+snippet newtex "LaTex File" b
+[[vfile:../latex/`env LC_ALL=en_US.utf8 date --date="today" "+%Y.%m.%d-%H-%M-%S"`.tex|${2}]]
+endsnippet
+
+snippet newmd "Markdown File" b
+[[vfile:../diary/`env LC_ALL=en_US.utf8 date --date="today" "+%Y-%m-%d"`${1}.md|${2}]]
+endsnippet
+
+snippet talk "Talk" b
+= Talk: ${1} =
+*Title*: ${2} 
+*Speaker*: ${3}
+:talk:
+
+${VISUAL}
+
+endsnippet
+
+snippet ideainbox "IdeaInbox" b
+= Research Idea =
+:r-ideas-inbox:${1:t- for related topics}:
+**Refer to [[../ResearchProcess|Research Process]] for the general procedure**
+
+${2}
+
+endsnippet
+
+snippet ideatex "Proper Idea" b
+[[vfile:../ideas/${1}.tex|${2}]]
+**Remember to change :r-ideas-inbox: to :r-ideas:, and use `newnote` in the latex file**
+*Ask the following questions for an idea*
+* What is the problem?  How would you pitch significance?
+* What is a potential insight / angle?  "I wonder if you could use X to do Y"
+* What is the desired outcome?
+
+*Ask the following questions for a pitch*
+* What have other people done? (Link to specific papers using papis!)
+* How would this approach be different and new?
+* What kind of first step would you take? E.g., try to prove X, or try to show that Y is impossible, etc. 
 
 endsnippet
