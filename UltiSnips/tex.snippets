@@ -2,6 +2,27 @@ priority -50
 
 extends texmath
 
+snippet announce "announcement" b
+\begin{center}
+\fbox{\fbox{\parbox{6.5in}{\centering
+$1
+}}}
+\end{center}
+endsnippet
+
+snippet ques "question" b
+\begin{question}${1:[10]}%
+	${0:${VISUAL}}
+\end{question}
+endsnippet
+
+snippet qpart "parts" b
+\begin{parts}
+\part${1:[10]}%
+${0:${VISUAL}}
+\end{parts}
+endsnippet
+
 snippet "b(egin)?" "begin{} / end{}" br
 \begin{${1:something}}
 	${0:${VISUAL}}
@@ -379,29 +400,6 @@ snippet newnote "New Document" b
 
 \newcommand{\seqn}[1]{{#1}_1, \ldots, {#1}_n}
 \newcommand{\seq}[2]{{#1}_1, \ldots, {#1}_{#2}}
-
-% Add support for tags, see https://tex.stackexchange.com/questions/53690/tagging-under-an-equation-using-underbrace
-\makeatletter
-\newcommand{\mytag}[2]{%
-  \text{#1}%
-  \@bsphack
-  \begingroup
-    \@onelevel@sanitize\@currentlabelname
-    \edef\@currentlabelname{%
-      \expandafter\strip@period\@currentlabelname\relax.\relax\@@@%
-    }%
-    \protected@write\@auxout{}{%
-      \string\newlabel{#2}{%
-        {#1}%
-        {\thepage}%
-        {\@currentlabelname}%
-        {\@currentHref}{}%
-      }%
-    }%
-  \endgroup
-  \@esphack
-}
-\makeatother
 
 % Define new shortcuts here
 \newcommand{\mko}[1]{{\color{red}M\@: #1}}
